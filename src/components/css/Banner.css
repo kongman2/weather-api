@@ -1,0 +1,31 @@
+.banner {
+   position: relative;
+   width: 100%;
+   height: 70vh;
+   overflow: hidden;
+}
+.video-bg {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   z-index: -1;
+   filter: brightness(0.8); /* 텍스트 가독성 ↑ */
+}
+.search {
+   width: 800px;
+   margin: 0 auto;
+   position: relative;
+   z-index: 1;
+   color: white;
+   text-align: center;
+   padding-top: 30vh;
+}
+.search_form {
+   margin-top: 20px;
+   display: flex;
+   justify-content: center;
+   gap: 10px;
+}

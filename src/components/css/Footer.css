@@ -1,0 +1,18 @@
+footer {
+   height: 300px;
+   background-color: #d9d9d9;
+   line-height: 100px;
+}
+
+footer > div {
+   height: 300px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   color: white;
+   text-align: center;
+}
+
+footer > div > img {
+   margin: 0 20px;
+}
