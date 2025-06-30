@@ -8,7 +8,12 @@ function Banner() {
    const handleInputChange = (e) => setCity(e.target.value)
    const handleSearch = (e) => {
       e.preventDefault()
-      navigate(`/weather/q=${city.trim()}`)
+      const trimmed = city.trim()
+      if (!trimmed) {
+         alert('도시 이름을 입력해주세요!')
+         return
+      }
+      navigate(`/map/${encodeURIComponent(trimmed)}`)
    }
    return (
       <div className="banner">
@@ -17,9 +22,8 @@ function Banner() {
          </video>
          <div className="search">
             <NavLink to="/">
-               <img src="/images/logotext.png" alt="로고" width="200"></img>
+               <img src="/images/logotext.png" alt="로고" width="200" />
             </NavLink>
-
             <form className="search_form" onSubmit={handleSearch}>
                <Input $height="40px" $fontSize="1.1rem" value={city} onChange={handleInputChange} type="text" placeholder="도시를 입력하세요" />
                <Button $width="100px" type="submit">

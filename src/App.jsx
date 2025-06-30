@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, Navigate } from 'react-router-dom'
 import Home from './pages/Home'
 import RegionalWeather from './pages/RegionalWeather'
 import WeatherForecast from './pages/WeatherForecast'
@@ -8,7 +8,8 @@ function App() {
       <Routes>
          <Route path="/" element={<Home />} />
 
-         <Route path="/weather/:city" element={<RegionalWeather />}></Route>
+         <Route path="/map/:city" element={<RegionalWeather />}></Route>
+         <Route path="/map" element={<Navigate to="/map/서울" replace />} />
 
          <Route path="/forecast/:city" element={<WeatherForecast />} />
 

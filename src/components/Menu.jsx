@@ -13,10 +13,10 @@ function Menu() {
                   </NavLink>
                </li>
                <li>
-                  <NavLink to="/weather/:city">현재날씨</NavLink>
+                  <NavLink to="/map/서울">현재날씨</NavLink>
                </li>
                <li>
-                  <NavLink to="/forecast/:city">지역별날씨</NavLink>
+                  <NavLink to="/forecast/서울">지역별날씨</NavLink>
                </li>
                <li style={{ marginLeft: 'auto' }}>
                   <Button variant="outlined" href="#outlined-buttons">

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useParams } from 'react-router-dom'
 import { fetchForecast } from '../../features/forecastSlice'
 import { Typography, TextField, Button, Divider, CardContent } from '@mui/material'
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -10,12 +11,12 @@ import DeviceThermostatIcon from '@mui/icons-material/DeviceThermostat'
 import WaterDropIcon from '@mui/icons-material/WaterDrop'
 import AirIcon from '@mui/icons-material/Air'
 import UmbrellaIcon from '@mui/icons-material/Umbrella'
-import { Wrap, Main, Loading, Section, DateTitle, WeatherCard, DetailText, Title } from '../../styles/StyledComponent'
+import { Loading, Section, DateTitle, WeatherCard, DetailText, Title } from '../../styles/StyledComponent'
 const dayBackgrounds = ['#E3F2FD', '#C2E6FF', '#92CCF5', '#67A3CD', '#4A93C7', '#0A4874']
 function ForecastSlider() {
+   const { city } = useParams()
    const dispatch = useDispatch()
    const { data, loading, error } = useSelector((state) => state.forecast)
-   const [city, setCity] = useState('서울')
    const [errorMessage, setErrorMessage] = useState('')
    useEffect(() => {
       dispatch(fetchForecast('서울'))

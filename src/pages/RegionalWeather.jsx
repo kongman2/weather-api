@@ -1,18 +1,20 @@
+import { useParams } from 'react-router-dom'
+import WeatherMap from '../components/WeatherMap'
 import { Wrap, Main } from '../styles/StyledComponent'
 import Menu from '../components/Menu'
 import Footer from '../components/Footer'
-import WeatherMap from '../components/WeatherMap'
-
-function WeatherForecast() {
+function RegionalWeather() {
+   const { city } = useParams()
+   if (!city) return null
    return (
       <Wrap>
          <Menu />
          <Main>
-            <WeatherMap />
+            <WeatherMap city={city} />
          </Main>
          <Footer />
       </Wrap>
    )
 }
 
-export default WeatherForecast
+export default RegionalWeather
